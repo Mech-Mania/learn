@@ -1,0 +1,36 @@
+---
+title: Welcome to Starlight
+description: Get started building your docs site with Starlight.
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  tagline: Congrats on setting up a new Starlight project!
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Getting started
+      link: /guides/example/
+      icon: right-arrow
+    - text: Lessons
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+    - text: Contribute
+      link: /getting-started/contributing
+      icon: external
+      variant: minimal
+
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Mechmania-geared curriculum" icon="document">
+	    insert blurb
+    </Card>
+	<Card title="Maintained by WCI robotics club" icon="add-document">
+	    insert blurb
+    </Card>
+	<Card title="Contributing" icon="setting">
+	    We encourage all contributions. Read [Contributing.md]("/Contributing.md"])
+    </Card>
+</CardGrid>
