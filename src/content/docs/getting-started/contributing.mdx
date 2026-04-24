@@ -15,13 +15,15 @@ import { Steps, Card } from '@astrojs/starlight/components';
 We do not allow any AI to be used in development of these docs. If we suspect that your contributions were created with AI, they will be rejected.
 :::
 
-Thank you for your interest in contributing! We welcome every addition, no matter how small.
+Thank you for your interest in contributing to Learn! We welcome every addition, no matter how small.
+
+If you have any suggestions, or if you've found any mistakes, please create an issue on our [Github repo]("https://github.com/mech-mania/learn") (following our style guide below).
 
 ## Setup
 It is recommended to use an IDE such as [VSCode](https://code.visualstudio.com/), however it is not required. 
 You will need to have [NodeJS](https://nodejs.org/) installed on your computer to build the project. You will also need to have Git set up and configured.
 
-This project runs with Astro Starlight.
+Learn runs with Astro Starlight.
 
 ## Style Guide
 :::tip
@@ -61,14 +63,26 @@ More examples:
 <Card title="Guides">
 The format for guide names is `kebab-case-name`.
 </Card>
+<Card title="Images">
+Image files should be named with the format `XX-kebab-case-name`, where the two first characters and the unique (within a lesson/guide) ID of the image.
+
+Image files should be stored within the `src/assets/` directory of the site.
+If a lesson or guide contains an image, that image should be stored within the `src/assets` directory, in the same subfolder as their corresponding lesson is to the `src/content/docs/` folder.
+
+For example, if there were 2 images in a lesson at `src/assets/content/docs/lessons/101-kebab-eating.mdx`, some image files could be:
+```
+src/assets/lessons/101-kebab-eating/01-grill-photo.png
+src/assets/lessons/101-kebab-eating/02-propane-tank.png
+```
+</Card>
+
 
 In general, the title of a file should match the transformed version of the title inside the metadata.
 
 If renaming a file, provide a good reason in your PR, otherwise we may ask you about it before approving.
 
 #### Lessons
-When writing lessons, make each lesson easy to digest and interactive. Go step by step, but still treat the reader like an adult, and leave them challenges to accomplish with their newly aqcuired skills.
-For the first mention of an acronym, process, or technical phrase, link to either an internet source or create a link to an entry in the [glossary](/getting-started/glossary). Language in general must be formal. However, you may use terms such as "we, us, you" (but never 'I'), in your writings.
+When writing lessons, make each lesson easy to digest and interactive. Go step by step, but still treat the reader like an adult, and leave them challenges to accomplish with their newly aqcuired skills. Language in general must be formal. However, you may use terms such as "we, us, you" (but never 'I'), in your writings.
 
 At the end of lessons, include more advanced tips if applicable.
 
@@ -88,6 +102,9 @@ Guides should be self-contained in one file, and they have the same minimums as 
 
 #### Starlight components
 Astro Starlight provides numerous extremely useful components for creating guides. It is highly encouraged that you read [their docs](https://starlight.astro.build/components/using-components/), as we may withhold PR acceptances should using their components result in a cleaner and easier to use UI than what is implemented.
+
+#### Github Issues
+Issues should be concise and specific in scope. They should not have multiple different items all in one. We encourage you to solve issues yourself.
 
 #### Commits
 When writing a commit message, follow [Conventionalal Commits](https://www.conventionalcommits.org/en/v1.0.0/) AND include the lesson number (if modfying lessons) AND filename (if creating a lesson or guide)
@@ -111,8 +128,8 @@ We may ask contributors to be more concise and edit your title or description be
     
     ```bash
     # via command line
-    gh repo fork mech-mania/docs
-    git clone https://github.com/<your-username>/docs
+    gh repo fork mech-mania/learn
+    git clone https://github.com/<your-username>/learn
 
     ```
 
@@ -129,12 +146,13 @@ We may ask contributors to be more concise and edit your title or description be
     npm run build
     npm run preview
     ```
+3. If you have a feature request, or are adding a feature yourself, please create a Github Issue on our repository detailing it.
 
-3. Then write guides, lessons, and technical docs according to the style guide above. 
+4. Then write guides, lessons, and technical docs according to the style guide above. 
     Feel free to also suggest miscellaneous improvements to the docs website as well.
 
-4. Open a PR on Github to our repo, and neatly explain what was added, where it will be reviewed by our team.
+5. Open a PR on Github to our repo, then link it to the issue you created, and neatly explain what was added, where it will be reviewed by our team.
 
-5. If your PR gets rejected, take a look at the feedback. Most of the time we still want your contributions, you just need to tweak a few small things for it to be good enough.
+6. If your PR gets rejected, take a look at the feedback. Most of the time we still want your contributions, you just need to tweak a few small things for it to be good enough.
 
 </Steps>
