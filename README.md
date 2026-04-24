@@ -1,0 +1,7 @@
+## Mechmania Docs
+
+An open-source collection of guides and lessons for robotics, specializing on the annual Mechmania robotics competition.
+
+Docs hosted online at [docs.mechmania.ca](https://docs.mechmania.ca/).
+
+Interested in [contributing](https://docs.mechmania.ca/getting-started/contributing/)? Please do! We welcome all contributions.
