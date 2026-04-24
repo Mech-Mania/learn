@@ -1,0 +1,137 @@
+---
+title: Contributing
+description: How to contribute to the Mechmania Docs
+sidebar:
+    order: 2
+author: Camleaf
+last-editor: Camleaf
+created-on: 26/04/23
+last-edited: 26/04/23
+---
+
+import { Steps, Card } from '@astrojs/starlight/components';
+
+:::danger
+We do not allow any AI to be used in development of these docs. If we suspect that your contributions were created with AI, they will be rejected.
+:::
+
+Thank you for your interest in contributing! We welcome every addition, no matter how small.
+
+## Setup
+It is recommended to use an IDE such as [VSCode](https://code.visualstudio.com/), however it is not required. 
+You will need to have [NodeJS](https://nodejs.org/) installed on your computer to build the project. You will also need to have Git set up and configured.
+
+This project runs with Astro Starlight.
+
+## Style Guide
+:::tip
+We aspire to keep a consistent style throughout the documentation, and as this is a new project, this section will likely be constantly growing and changing as we figure out the best style for both contributors and readers.
+:::
+:::caution
+If you are creating a lesson or a guide, you *must* have enough knowledge about the subject to effectively write about them. If you submit a PR that contains half-baked material, we will give you one opportunity to fix it before rejecting the PR.
+:::
+
+#### File Headers
+At the top of each .mdx file, you must include the following block of metadata. A PR which contains .mdx files without it will be rejected.
+```yaml
+---
+title: Example title
+description: A really cool and descriptive blurb
+author: You!
+last-editor: A real person
+created-on: yy/mm/dd
+last-edited: yy/mm/dd
+---
+```
+When modifying existing files, remember to update the last-edited sections.
+
+#### File Naming
+<Card title="Lessons">
+The format for naming lessons is `XXX-kebab-case-name.mdx`, where the the first 3 characters represent the number ID of the lesson, and the rest is in kebab-case.
+
+For example, should you have a lesson named `1.15 - Example lesson`, then the final name would be `115-example-lesson.mdx`
+
+More examples:
+```
+"1.2 - Kebab Roasting" -> "102-kebab-roasting.mdx"
+"4.9 - Burger Flipping" -> "409-burger-flipping.mdx"
+"2.22 - Factual Statements" -> "222-factual-statements.mdx"
+```
+</Card>
+<Card title="Guides">
+The format for guide names is `kebab-case-name`.
+</Card>
+
+In general, the title of a file should match the transformed version of the title inside the metadata.
+
+If renaming a file, provide a good reason in your PR, otherwise we may ask you about it before approving.
+
+#### Lessons
+When writing lessons, make each lesson easy to digest and interactive. Go step by step, but still treat the reader like an adult, and leave them challenges to accomplish with their newly aqcuired skills.
+For the first mention of an acronym, process, or technical phrase, link to either an internet source or create a link to an entry in the [glossary](/getting-started/glossary). Language in general must be formal. However, you may use terms such as "we, us, you" (but never 'I'), in your writings.
+
+At the end of lessons, include more advanced tips if applicable.
+
+<Card title="Minimums">
+- All lessons must contain instructions for Windows and Linux (if possible). 
+- All programming lessons must be in at least C++ and have VSCode setup instructions. 
+- All CAD lessons must be in at least Solidworks. However, contributors are free to include additional systems, as long as they remain consistent across the lesson and lessons linking to it.
+- Electrical lessons should contain one of proper circuit schematics OR breadboard diagrams (preferably both) when referencing a circuit.
+</Card>
+
+
+#### Guides
+Guides are step-by-step instructions to accomplishing a specific task. Do not give the reader challenges to test their learning until the end of the guide.
+
+Guides should be self-contained in one file, and they have the same minimums as lessons. 
+
+
+#### Starlight components
+Astro Starlight provides numerous extremely useful components for creating guides. It is highly encouraged that you read [their docs](https://starlight.astro.build/components/using-components/), as we may withhold PR acceptances should using their components result in a cleaner and easier to use UI than what is implemented.
+
+#### Commits
+When writing a commit message, follow [Conventionalal Commits](https://www.conventionalcommits.org/en/v1.0.0/) AND include the lesson number (if modfying lessons) AND filename (if creating a lesson or guide)
+For example:
+```
+feat: created contributing file
+fix: removed line comment in lesson 4.1
+feat: created lesson 1.0 - Chapter Overview
+```
+
+This is not 100% required, however it makes everyone's lives easier, and if it causes an issue or not enough commits are formatted properly, it will become required.
+
+#### Pull Requests
+Pull requests must have a specific purpose in mind and stick to it. We will not accept pull requests which modify half or even an eighth of the files in the codebase. The title must follow [Conventionalal commits](https://www.conventionalcommits.org/en/v1.0.0/) just like the commits, and the description must briefly and concisely explain what it added as well as any unorthodox decisions.
+
+We may ask contributors to be more concise and edit your title or description before accepting a PR.
+
+## Development
+<Steps>
+1. Start by creating a fork of the repository via github or the github command line tool.
+    
+    ```bash
+    # via command line
+    gh repo fork mech-mania/learning
+    git clone https://github.com/<your-username>/learning
+
+    ```
+
+2. Use npm commands to run dev enviroments and to build/preview.
+    
+    ```bash
+    # dev environment for live updates
+    npm run dev
+
+    # build then preview for mock production
+    npm run build
+    npm run preview
+    ```
+
+3. Then write guides, lessons, and technical docs according to the style guide above. 
+    Feel free to also suggest miscellaneous improvements to the docs website as well.
+
+4. Open a PR on Github to our repo, and neatly explain what was added, where it will be reviewed by our team.
+
+5. If your PR gets rejected, take a look at the feedback. Most of the time we still want your contributions, you just need to tweak a few small things for it to be good enough.
+
+</Steps>
