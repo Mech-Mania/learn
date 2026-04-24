@@ -6,9 +6,9 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   integrations: [
       starlight({
-          title: 'Mechmania Docs',
+          title: 'Mechmania Learn',
           social: [
-              { icon: 'github', label: 'GitHub', href: 'https://github.com/Mech-Mania/docs' }
+              { icon: 'github', label: 'GitHub', href: 'https://github.com/Mech-Mania/learn' }
           ],
           customCss: [
               // Path to your Tailwind base styles:
