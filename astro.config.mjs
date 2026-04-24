@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'Mechmania Docs',
 			social: [
-                { icon: 'github', label: 'GitHub', href: 'https://github.com/Mech-Mania/learning' }
+                { icon: 'github', label: 'GitHub', href: 'https://github.com/Mech-Mania/docs' }
             ],
 			sidebar: [
                 {
