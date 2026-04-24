@@ -1,17 +1,21 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Mechmania Docs 
+description: Open-source guides and lessons for Mechmania
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Open-source guides and lessons for Mechmania  
   image:
     file: ../../assets/houston.webp
   actions:
     - text: Getting started
-      link: /guides/example/
+      link: /getting-started/overview
       icon: right-arrow
     - text: Lessons
-      link: https://starlight.astro.build
+      link: /lessons/u1-intro/100-chapter-overview
+      icon: external
+      variant: minimal
+    - text: Guides
+      link: /lessons/guides/example-guide
       icon: external
       variant: minimal
     - text: Contribute
@@ -31,6 +35,6 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 	    insert blurb
     </Card>
 	<Card title="Contributing" icon="setting">
-	    We encourage all contributions. Read [Contributing.md]("/Contributing.md"])
+	    We encourage all contributions. Read [Contributing.md]("/getting-started/contributing.mdx"])
     </Card>
 </CardGrid>
