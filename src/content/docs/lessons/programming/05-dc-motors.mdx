@@ -74,7 +74,7 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
             
             // Analog joysticks tend to have a constant measured offset from 512 (ideal centre value) at rest, 
             // The deadzone acts as a filter on the offset, by making all values within the affected range 0.
-            if ( abs(joystick) < DEADZONE ) joyX = 0;
+            if ( abs(joystick) < DEADZONE ) joystick = 0;
             
             // We map the joystick value from a signed 10 bit integer to a signed 9 bit integer to match the 8 bit PWM resolution.
             setMotor(
@@ -134,7 +134,7 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
             
             // Analog joysticks tend to have a constant measured offset from 512 (ideal centre value) at rest, 
             // The deadzone acts as a filter on the offset, by making all values within the affected range 0.
-            if ( abs(joystick) < DEADZONE ) joyX = 0;
+            if ( abs(joystick) < DEADZONE ) joystick = 0;
             
             // We map the joystick value from a signed 10 bit integer to a signed 9 bit integer to match the 8 bit PWM resolution.
             setMotor(
@@ -176,6 +176,8 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
         
         #define M1A 15
         #define M1B 16
+
+        #define JOYSTICK_Y_PIN 13
 
         void setMotor(mcpwm_unit_t unit, mcpwm_timer_t timer, float val){
             
@@ -229,9 +231,9 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
 
         
         void loop(){
-            int joystick = analogRead(JOYSTICK_X_PIN);
+            int joystick = analogRead(JOYSTICK_Y_PIN);
             joystick -= 512; 
-            if ( abs(joystick) < DEADZONE ) joyX = 0;
+            if ( abs(joystick) < DEADZONE ) joystick = 0;
             
             // Set motor 0
             setMotor(
