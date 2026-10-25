@@ -60,7 +60,7 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
 
 
         void setup(){
-            pinMode(JOYSTICK_X_PIN, INPUT);
+            pinMode(JOYSTICK_Y_PIN, INPUT);
             pinMode(M1A, OUTPUT);
             pinMode(M1B, OUTPUT);
         }
@@ -68,7 +68,7 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
 
         void loop(){
             // Returns the vertical position of the joystick from a range of 0-1023
-            int joystick = analogRead(JOYSTICK_X_PIN);
+            int joystick = analogRead(JOYSTICK_Y_PIN);
             
             joystick -= 512;
             
@@ -118,7 +118,7 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
 
 
         void setup(){
-            pinMode(JOYSTICK_X_PIN, INPUT);
+            pinMode(JOYSTICK_Y_PIN, INPUT);
             pinMode(M1A, OUTPUT);
             pinMode(M1B, OUTPUT);
             ledcAttach(M1A, PWM_FREQ, PWM_RESOLUTION);
@@ -128,7 +128,7 @@ Consequently, when both `M1` pins are depowered, no motion occurs, and when both
 
         void loop(){
             // Returns the vertical position of the joystick from a range of 0-1023
-            int joystick = analogRead(JOYSTICK_X_PIN);
+            int joystick = analogRead(JOYSTICK_Y_PIN);
             
             joystick -= 512;
             
